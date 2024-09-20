@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAcademy - Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://fastly.picsum.photos/id/108/2000/1333.jpg?hmac=jtsJnUALS7Y2pJnLKGF7fSvGhEKpDWLvjTr9bRVFELA') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .box {
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .box:hover {
+            background-color: rgba(0, 136, 209, 0.8);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>EduAcademy Dashboard</h1>
+        <div class="container">
+            <a href="office.html" class="box">
+                <img src="https://raw.githubusercontent.com/jaylocklol/EduAcademy/refs/heads/main/assets/office.webp" alt="Office Icon">
+                <p>Office</p>
+            </a>
+
+            <a href="word.html" class="box">
+                <img src="https://raw.githubusercontent.com/jaylocklol/EduAcademy/refs/heads/main/assets/word.png" alt="Word Icon">
+                <p>Word</p>
+            </a>
+
+            <a href="mail.html" class="box">
+                <img src="https://raw.githubusercontent.com/jaylocklol/EduAcademy/refs/heads/main/assets/Gmail.png" alt="Gmail Icon">
+                <p>Gmail</p>
+            </a>
+
+            <a href="maths.html" class="box">
+                <img src="https://raw.githubusercontent.com/jaylocklol/EduAcademy/refs/heads/main/assets/maths.png" alt="Maths Icon">
+                <p>Maths Work</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
