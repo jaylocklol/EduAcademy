@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAcademy Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://fastly.picsum.photos/id/24/4855/1803.jpg?hmac=ICVhP1pUXDLXaTkgwDJinSUS59UWalMxf4SOIWb9Ui4') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>EduAcademy Calculator</h1>
+    <label for="urlInput">Enter URL:</label>
+    <input type="text" id="urlInput" placeholder="https://example.com" required>
+
+    <label for="methodSelect">Select a Method:</label>
+    <select id="methodSelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <button onclick="performAction()">Go</button>
+</div>
+
+<script>
+    function performAction() {
+        const url = document.getElementById('urlInput').value;
+        const method = document.getElementById('methodSelect').value;
+
+        if (!url) {
+            alert('Please enter a valid URL.');
+            return;
+        }
+
+        switch (method) {
+            case "1":
+                var translateURL = 'https://translate.google.com/translate?u=' + encodeURIComponent(url) + '&tl=en';
+                window.location.href = translateURL;
+                break;
+
+            case "2":
+                var win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.referrerPolicy = 'no-referrer';
+                iframe.allow = 'fullscreen';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+                var script = win.document.createElement('script');
+                script.src = 'https://jaylocklol.github.io/math/assets/databasework.js';
+                win.document.body.appendChild(script);
+                break;
+
+            case "3":
+                window.location.href = "https://onk.vercel.app/";
+                break;
+
+            case "4":
+                const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
+                fetch(proxy + url)
+                  .then(response => response.text())
+                  .then(text => {
+                      document.write(text);
+                      var allElements = document.getElementsByTagName("*");
+                      for (var i = 0; i < allElements.length; i++) {
+                          if (allElements[i].src) {
+                              allElements[i].src = new URL(allElements[i].src, url).href;
+                              allElements[i].src = proxy + allElements[i].src;
+                          }
+                      }
+                  });
+                break;
+
+            default:
+                alert('Invalid method selected.');
+        }
+    }
+</script>
+
+</body>
+</html>
